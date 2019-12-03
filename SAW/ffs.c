@@ -11,16 +11,6 @@ typedef uint32_t my_uint_t;
 
 
 // returns the index of the first non-zero bit
-uint8_t ref(my_uint_t word) {
-    int i = 0;
-    if(!word)
-        return 0;
-    for(int cnt = 0; cnt < 32; cnt++)
-        if(((1ul << i++) & word) != 0)
-            return i;
-    return 0; // notreached
-}
-
 uint8_t imp(my_uint_t i) {
     char n = 1;
     if (!(i & 0xffff)) { n += 16; i >>= 16; }
@@ -44,36 +34,16 @@ uint8_t imp_nobranch(my_uint_t i) {
   return (i) ? (n+((i+1) & 0x01)) : 0;
 }
 
-// and now a buggy one
-uint8_t bug(my_uint_t word) {
-    // injected bug:
-    if(word == 0x101010) return 4; // instead of 5
-    return ref(word);
+uint8_t ref(my_uint_t word) {
+    int i = 0;
+    if(!word)
+        return 0;
+    for(int cnt = 0; cnt < 32; cnt++)
+        if(((1ul << i++) & word) != 0)
+            return i;
+    return 0; // notreached
 }
 
-#ifdef RUN
-int main(int argc, char **argv) {
-    my_uint_t t = 0x800000;
-    printf("(imp, ref) 0x%x -> (%d, %d)\n", t, imp(t), ref(t));
-    t = 0x000002;
-    printf("(imp, ref) 0x%x -> (%d, %d)\n", t, imp(t), ref(t));
-    t = 0x000008;
-    printf("(imp, ref) 0x%x -> (%d, %d)\n", t, imp(t), ref(t));
-    t = 0x101010;
-    printf("(bug, ref) 0x%x -> (%d, %d)\n", t, bug(t), ref(t));
-    /*printf("testing... "); fflush (stdout);
-    for (t = 0; t != 0x7FFFFFFF; ++ t)
-      assert (ref (t) == imp (t));
-      printf("OK\n");*/
-}
-#endif
-// Creative optimized version based on musl libc:
-// http://www.musl-libc.org/.
-//
-// Apparently this is a well known approach:
-// https://en.wikipedia.org/wiki/Find_first_set#CTZ. The DeBruijn
-// (https://en.wikipedia.org/wiki/De_Bruijn_sequence) sequence here is
-// different from the one in the Wikipedia article on 'ffs'.
 uint8_t musl (my_uint_t x)
 {
   static const char debruijn32[32] = {

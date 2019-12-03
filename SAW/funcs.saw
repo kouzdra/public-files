@@ -1,0 +1,15 @@
+enable_experimental;
+
+m <- llvm_load_module "funcs.bc";
+
+//loop10 <- crucible_llvm_extract m "loop10";
+//print_term loop10;
+
+print ">>>>>>> fact6 <<<<<<<<";
+fact6 <- crucible_llvm_extract m "fact6";
+print_term fact6;
+
+print ">>>>>>> fact6_mul <<<<<<<<";
+fact6_mul <- crucible_llvm_extract m "fact6_mul";
+print_term fact6_mul;
+
