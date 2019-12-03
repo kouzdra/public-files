@@ -1,0 +1,12 @@
+set_base 16;
+
+l <- llvm_load_module "div2_16.bc";
+print "Extracting reference term: ref";
+ref <- crucible_llvm_extract l "ref";
+print_type ref;
+print_term ref;
+print "--------------------------";
+print "Extracting implementation term: imp";
+imp <- crucible_llvm_extract l "imp";
+print_type imp;
+print_term imp;

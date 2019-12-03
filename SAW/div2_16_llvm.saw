@@ -1,0 +1,15 @@
+set_base 16;
+
+print "Extracting reference term: ref";
+l <- llvm_load_module "div2_16.bc";
+ref <- crucible_llvm_extract l "ref";
+
+print "Extracting implementation term: imp";
+imp <- crucible_llvm_extract l "imp";
+
+print "Proving equivalence: ref == imp";
+let thm1 = {{ \x -> ref x == imp x }};
+result <- prove abc thm1;
+print result;
+
+print "Done.";

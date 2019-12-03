@@ -1,0 +1,12 @@
+[10:07:40.916] Loading file "/home/msk/WORK/SNOB/SAW/sl-basic/c/div2_llvm_print.saw"
+[10:07:40.918] Extracting reference term: ref
+[10:07:40.935] (arg_0 : Prelude.bitvector 0x20)
+-> Prelude.Vec 0x21 Prelude.Bool
+[10:07:40.936] \(arg_0 : Prelude.bitvector 0x20) ->
+  Prelude.bvSDiv 0x20 arg_0 (Prelude.bvNat 0x20 0x2)
+[10:07:40.936] -------------------------
+[10:07:40.936] Extracting implementation term: imp
+[10:07:40.939] (arg_0 : Prelude.bitvector 0x20)
+-> Prelude.Vec 0x20 Prelude.Bool
+[10:07:40.940] \(arg_0 : Prelude.bitvector 0x20) ->
+  Prelude.bvSShr 0x1f arg_0 0x1

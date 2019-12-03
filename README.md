@@ -1,2 +1,2 @@
 # public-files-
-Can fof misc. pub. files:
+Can for misc. pub. files:
