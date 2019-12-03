@@ -1,10 +1,342 @@
-clang -g -emit-llvm -c ffs.c -o ffs.bc
 saw ffs.saw
-[15:17:38.733] Loading file "/home/msk/WORK/SNOB/MISC/public-files-/SAW/ffs.saw"
-[15:17:38.803] Extracting reference term: imp
-[15:17:38.814] (arg_0 : Prelude.bitvector 0x20)
+[16:52:46.207] Loading file "/home/msk/WORK/SNOB/MISC/public-files-/SAW/ffs.saw"
+[16:52:46.277] Extracting reference term: ref
+[16:52:46.323] (arg_0 : Prelude.bitvector 0x20)
 -> Prelude.Vec 0x8 Prelude.Bool
-[15:17:38.814] let { x@1 = Prelude.bitvector 0x20
+[16:52:46.323] let { x@1 = Prelude.bvNat 0x40 0x0
+      x@2 = Prelude.bitvector 0x8
+      x@3 = Prelude.bvNat 0x8 0x0
+    }
+ in \(arg_0 : Prelude.bitvector 0x20) ->
+      let { x@4 = Prelude.bvUExt 0x20 0x20 arg_0
+          }
+       in Prelude.ite x@2
+            (Prelude.bvEq 0x20 (Prelude.bvNat 0x20 0x0) arg_0)
+            x@3
+            (Prelude.ite x@2
+               (Prelude.bvEq 0x40 x@1
+                  (Prelude.bvAnd 0x40 (Prelude.bvNat 0x40 0x1) x@4))
+               (Prelude.ite x@2
+                  (Prelude.bvEq 0x40 x@1
+                     (Prelude.bvAnd 0x40 (Prelude.bvNat 0x40 0x2) x@4))
+                  (Prelude.ite x@2
+                     (Prelude.bvEq 0x40 x@1
+                        (Prelude.bvAnd 0x40 (Prelude.bvNat 0x40 0x4) x@4))
+                     (Prelude.ite x@2
+                        (Prelude.bvEq 0x40 x@1
+                           (Prelude.bvAnd 0x40 (Prelude.bvNat 0x40 0x8) x@4))
+                        (Prelude.ite x@2
+                           (Prelude.bvEq 0x40 x@1
+                              (Prelude.bvAnd 0x40 (Prelude.bvNat 0x40 0x10)
+                                 x@4))
+                           (Prelude.ite x@2
+                              (Prelude.bvEq 0x40 x@1
+                                 (Prelude.bvAnd 0x40 (Prelude.bvNat 0x40 0x20)
+                                    x@4))
+                              (Prelude.ite x@2
+                                 (Prelude.bvEq 0x40 x@1
+                                    (Prelude.bvAnd 0x40
+                                       (Prelude.bvNat 0x40 0x40)
+                                       x@4))
+                                 (Prelude.ite x@2
+                                    (Prelude.bvEq 0x40 x@1
+                                       (Prelude.bvAnd 0x40
+                                          (Prelude.bvNat 0x40 0x80)
+                                          x@4))
+                                    (Prelude.ite x@2
+                                       (Prelude.bvEq 0x40 x@1
+                                          (Prelude.bvAnd 0x40
+                                             (Prelude.bvNat 0x40 0x100)
+                                             x@4))
+                                       (Prelude.ite x@2
+                                          (Prelude.bvEq 0x40 x@1
+                                             (Prelude.bvAnd 0x40
+                                                (Prelude.bvNat 0x40 0x200)
+                                                x@4))
+                                          (Prelude.ite x@2
+                                             (Prelude.bvEq 0x40 x@1
+                                                (Prelude.bvAnd 0x40
+                                                   (Prelude.bvNat 0x40 0x400)
+                                                   x@4))
+                                             (Prelude.ite x@2
+                                                (Prelude.bvEq 0x40 x@1
+                                                   (Prelude.bvAnd 0x40
+                                                      (Prelude.bvNat 0x40 0x800)
+                                                      x@4))
+                                                (Prelude.ite x@2
+                                                   (Prelude.bvEq 0x40 x@1
+                                                      (Prelude.bvAnd 0x40
+                                                         (Prelude.bvNat 0x40
+                                                            0x1000)
+                                                         x@4))
+                                                   (Prelude.ite x@2
+                                                      (Prelude.bvEq 0x40 x@1
+                                                         (Prelude.bvAnd 0x40
+                                                            (Prelude.bvNat 0x40
+                                                               0x2000)
+                                                            x@4))
+                                                      (Prelude.ite x@2
+                                                         (Prelude.bvEq 0x40 x@1
+                                                            (Prelude.bvAnd 0x40
+                                                               (Prelude.bvNat
+                                                                  0x40
+                                                                  0x4000)
+                                                               x@4))
+                                                         (Prelude.ite x@2
+                                                            (Prelude.bvEq 0x40
+                                                               x@1
+                                                               (Prelude.bvAnd
+                                                                  0x40
+                                                                  (Prelude.bvNat
+                                                                     0x40
+                                                                     0x8000)
+                                                                  x@4))
+                                                            (Prelude.ite x@2
+                                                               (Prelude.bvEq
+                                                                  0x40
+                                                                  x@1
+                                                                  (Prelude.bvAnd
+                                                                     0x40
+                                                                     (Prelude.bvNat
+                                                                        0x40
+                                                                        0x10000)
+                                                                     x@4))
+                                                               (Prelude.ite x@2
+                                                                  (Prelude.bvEq
+                                                                     0x40
+                                                                     x@1
+                                                                     (Prelude.bvAnd
+                                                                        0x40
+                                                                        (Prelude.bvNat
+                                                                           0x40
+                                                                           0x20000)
+                                                                        x@4))
+                                                                  (Prelude.ite
+                                                                     x@2
+                                                                     (Prelude.bvEq
+                                                                        0x40
+                                                                        x@1
+                                                                        (Prelude.bvAnd
+                                                                           0x40
+                                                                           (Prelude.bvNat
+                                                                              0x40
+                                                                              0x40000)
+                                                                           x@4))
+                                                                     (Prelude.ite
+                                                                        x@2
+                                                                        (Prelude.bvEq
+                                                                           0x40
+                                                                           x@1
+                                                                           (Prelude.bvAnd
+                                                                              0x40
+                                                                              (Prelude.bvNat
+                                                                                 0x40
+                                                                                 0x80000)
+                                                                              x@4))
+                                                                        (Prelude.ite
+                                                                           x@2
+                                                                           (Prelude.bvEq
+                                                                              0x40
+                                                                              x@1
+                                                                              (Prelude.bvAnd
+                                                                                 0x40
+                                                                                 (Prelude.bvNat
+                                                                                    0x40
+                                                                                    0x100000)
+                                                                                 x@4))
+                                                                           (Prelude.ite
+                                                                              x@2
+                                                                              (Prelude.bvEq
+                                                                                 0x40
+                                                                                 x@1
+                                                                                 (Prelude.bvAnd
+                                                                                    0x40
+                                                                                    (Prelude.bvNat
+                                                                                       0x40
+                                                                                       0x200000)
+                                                                                    x@4))
+                                                                              (Prelude.ite
+                                                                                 x@2
+                                                                                 (Prelude.bvEq
+                                                                                    0x40
+                                                                                    x@1
+                                                                                    (Prelude.bvAnd
+                                                                                       0x40
+                                                                                       (Prelude.bvNat
+                                                                                          0x40
+                                                                                          0x400000)
+                                                                                       x@4))
+                                                                                 (Prelude.ite
+                                                                                    x@2
+                                                                                    (Prelude.bvEq
+                                                                                       0x40
+                                                                                       x@1
+                                                                                       (Prelude.bvAnd
+                                                                                          0x40
+                                                                                          (Prelude.bvNat
+                                                                                             0x40
+                                                                                             0x800000)
+                                                                                          x@4))
+                                                                                    (Prelude.ite
+                                                                                       x@2
+                                                                                       (Prelude.bvEq
+                                                                                          0x40
+                                                                                          x@1
+                                                                                          (Prelude.bvAnd
+                                                                                             0x40
+                                                                                             (Prelude.bvNat
+                                                                                                0x40
+                                                                                                0x1000000)
+                                                                                             x@4))
+                                                                                       (Prelude.ite
+                                                                                          x@2
+                                                                                          (Prelude.bvEq
+                                                                                             0x40
+                                                                                             x@1
+                                                                                             (Prelude.bvAnd
+                                                                                                0x40
+                                                                                                (Prelude.bvNat
+                                                                                                   0x40
+                                                                                                   0x2000000)
+                                                                                                x@4))
+                                                                                          (Prelude.ite
+                                                                                             x@2
+                                                                                             (Prelude.bvEq
+                                                                                                0x40
+                                                                                                x@1
+                                                                                                (Prelude.bvAnd
+                                                                                                   0x40
+                                                                                                   (Prelude.bvNat
+                                                                                                      0x40
+                                                                                                      0x4000000)
+                                                                                                   x@4))
+                                                                                             (Prelude.ite
+                                                                                                x@2
+                                                                                                (Prelude.bvEq
+                                                                                                   0x40
+                                                                                                   x@1
+                                                                                                   (Prelude.bvAnd
+                                                                                                      0x40
+                                                                                                      (Prelude.bvNat
+                                                                                                         0x40
+                                                                                                         0x8000000)
+                                                                                                      x@4))
+                                                                                                (Prelude.ite
+                                                                                                   x@2
+                                                                                                   (Prelude.bvEq
+                                                                                                      0x40
+                                                                                                      x@1
+                                                                                                      (Prelude.bvAnd
+                                                                                                         0x40
+                                                                                                         (Prelude.bvNat
+                                                                                                            0x40
+                                                                                                            0x10000000)
+                                                                                                         x@4))
+                                                                                                   (Prelude.ite
+                                                                                                      x@2
+                                                                                                      (Prelude.bvEq
+                                                                                                         0x40
+                                                                                                         x@1
+                                                                                                         (Prelude.bvAnd
+                                                                                                            0x40
+                                                                                                            (Prelude.bvNat
+                                                                                                               0x40
+                                                                                                               0x20000000)
+                                                                                                            x@4))
+                                                                                                      (Prelude.ite
+                                                                                                         x@2
+                                                                                                         (Prelude.bvEq
+                                                                                                            0x40
+                                                                                                            x@1
+                                                                                                            (Prelude.bvAnd
+                                                                                                               0x40
+                                                                                                               (Prelude.bvNat
+                                                                                                                  0x40
+                                                                                                                  0x40000000)
+                                                                                                               x@4))
+                                                                                                         (Prelude.ite
+                                                                                                            x@2
+                                                                                                            (Prelude.bvEq
+                                                                                                               0x40
+                                                                                                               x@1
+                                                                                                               (Prelude.bvAnd
+                                                                                                                  0x40
+                                                                                                                  (Prelude.bvNat
+                                                                                                                     0x40
+                                                                                                                     0x80000000)
+                                                                                                                  x@4))
+                                                                                                            x@3
+                                                                                                            (Prelude.bvNat
+                                                                                                               0x8
+                                                                                                               0x20))
+                                                                                                         (Prelude.bvNat
+                                                                                                            0x8
+                                                                                                            0x1f))
+                                                                                                      (Prelude.bvNat
+                                                                                                         0x8
+                                                                                                         0x1e))
+                                                                                                   (Prelude.bvNat
+                                                                                                      0x8
+                                                                                                      0x1d))
+                                                                                                (Prelude.bvNat
+                                                                                                   0x8
+                                                                                                   0x1c))
+                                                                                             (Prelude.bvNat
+                                                                                                0x8
+                                                                                                0x1b))
+                                                                                          (Prelude.bvNat
+                                                                                             0x8
+                                                                                             0x1a))
+                                                                                       (Prelude.bvNat
+                                                                                          0x8
+                                                                                          0x19))
+                                                                                    (Prelude.bvNat
+                                                                                       0x8
+                                                                                       0x18))
+                                                                                 (Prelude.bvNat
+                                                                                    0x8
+                                                                                    0x17))
+                                                                              (Prelude.bvNat
+                                                                                 0x8
+                                                                                 0x16))
+                                                                           (Prelude.bvNat
+                                                                              0x8
+                                                                              0x15))
+                                                                        (Prelude.bvNat
+                                                                           0x8
+                                                                           0x14))
+                                                                     (Prelude.bvNat
+                                                                        0x8
+                                                                        0x13))
+                                                                  (Prelude.bvNat
+                                                                     0x8
+                                                                     0x12))
+                                                               (Prelude.bvNat
+                                                                  0x8
+                                                                  0x11))
+                                                            (Prelude.bvNat 0x8
+                                                               0x10))
+                                                         (Prelude.bvNat 0x8
+                                                            0xf))
+                                                      (Prelude.bvNat 0x8 0xe))
+                                                   (Prelude.bvNat 0x8 0xd))
+                                                (Prelude.bvNat 0x8 0xc))
+                                             (Prelude.bvNat 0x8 0xb))
+                                          (Prelude.bvNat 0x8 0xa))
+                                       (Prelude.bvNat 0x8 0x9))
+                                    (Prelude.bvNat 0x8 0x8))
+                                 (Prelude.bvNat 0x8 0x7))
+                              (Prelude.bvNat 0x8 0x6))
+                           (Prelude.bvNat 0x8 0x5))
+                        (Prelude.bvNat 0x8 0x4))
+                     (Prelude.bvNat 0x8 0x3))
+                  (Prelude.bvNat 0x8 0x2))
+               (Prelude.bvNat 0x8 0x1))
+[16:52:46.335] -------------------------
+[16:52:46.336] Extracting implementation term: imp
+[16:52:46.345] (arg_0 : Prelude.bitvector 0x20)
+-> Prelude.Vec 0x8 Prelude.Bool
+[16:52:46.345] let { x@1 = Prelude.bitvector 0x20
       x@2 = Prelude.bitvector 0x8
       x@3 = Prelude.bvNat 0x20 0x0
       x@4 = Prelude.bvNat 0x20 0x1
@@ -57,68 +389,11 @@ saw ffs.saw
                   (Prelude.bvAnd 0x20 x@4
                      (Prelude.bvAdd 0x20 x@4
                         (Prelude.ite x@1 x@14 x@15 x@13)))))
-[15:17:38.817] -------------------------
-[15:17:38.818] Extracting implementation term: imp
-[15:17:38.826] (arg_0 : Prelude.bitvector 0x20)
+[16:52:46.348] -------------------------
+[16:52:46.348] Extracting implementation term: imp_nobranch
+[16:52:46.356] (arg_0 : Prelude.bitvector 0x20)
 -> Prelude.Vec 0x8 Prelude.Bool
-[15:17:38.827] let { x@1 = Prelude.bitvector 0x20
-      x@2 = Prelude.bitvector 0x8
-      x@3 = Prelude.bvNat 0x20 0x0
-      x@4 = Prelude.bvNat 0x20 0x1
-    }
- in \(arg_0 : x@1) ->
-      let { x@5 = Prelude.bvEq 0x20 x@3
-                    (Prelude.bvAnd 0x20 (Prelude.bvNat 0x20 0xffff) arg_0)
-            x@6 = Prelude.bvShr 0x20 arg_0 0x10
-            x@7 = Prelude.ite x@1 x@5 x@6 arg_0
-            x@8 = Prelude.bvEq 0x20 x@3
-                    (Prelude.bvAnd 0x20 (Prelude.bvNat 0x20 0xff) x@7)
-            x@9 = Prelude.bvShr 0x20 x@7 0x8
-            x@10 = Prelude.ite x@1 x@8 x@9 x@7
-            x@11 = Prelude.bvEq 0x20 x@3
-                     (Prelude.bvAnd 0x20 (Prelude.bvNat 0x20 0xf) x@10)
-            x@12 = Prelude.bvShr 0x20 x@10 0x4
-            x@13 = Prelude.ite x@1 x@11 x@12 x@10
-            x@14 = Prelude.bvEq 0x20 x@3
-                     (Prelude.bvAnd 0x20 (Prelude.bvNat 0x20 0x3) x@13)
-            x@15 = Prelude.bvShr 0x20 x@13 0x2
-            x@16 = Prelude.ite x@2 x@5 (Prelude.bvNat 0x8 0x11)
-                     (Prelude.bvNat 0x8 0x1)
-            x@17 = Prelude.ite x@2 x@8
-                     (Prelude.slice Prelude.Bool 0x18 0x8 0x0
-                        (Prelude.bvAdd 0x20 (Prelude.bvNat 0x20 0x8)
-                           (Prelude.bvSExt 0x18 0x7 x@16)))
-                     x@16
-            x@18 = Prelude.ite x@2 x@11
-                     (Prelude.slice Prelude.Bool 0x18 0x8 0x0
-                        (Prelude.bvAdd 0x20 (Prelude.bvNat 0x20 0x4)
-                           (Prelude.bvSExt 0x18 0x7 x@17)))
-                     x@17
-          }
-       in Prelude.slice Prelude.Bool 0x18 0x8 0x0
-            (Prelude.ite x@1
-               (Prelude.ite Prelude.Bool x@14 (Prelude.bvEq 0x20 x@3 x@15)
-                  (Prelude.ite Prelude.Bool x@11 (Prelude.bvEq 0x20 x@3 x@12)
-                     (Prelude.ite Prelude.Bool x@8 (Prelude.bvEq 0x20 x@3 x@9)
-                        (Prelude.ite Prelude.Bool x@5
-                           (Prelude.bvEq 0x20 x@3 x@6)
-                           (Prelude.bvEq 0x20 x@3 arg_0)))))
-               x@3
-               (Prelude.bvAdd 0x20
-                  (Prelude.bvSExt 0x18 0x7
-                     (Prelude.ite x@2 x@14
-                        (Prelude.slice Prelude.Bool 0x18 0x8 0x0
-                           (Prelude.bvAdd 0x20 (Prelude.bvNat 0x20 0x2)
-                              (Prelude.bvSExt 0x18 0x7 x@18)))
-                        x@18))
-                  (Prelude.bvAnd 0x20 x@4
-                     (Prelude.bvAdd 0x20 x@4
-                        (Prelude.ite x@1 x@14 x@15 x@13)))))
-[15:17:38.829] -------------------------
-[15:17:38.830] Extracting implementation term: imp_nobranch
-[15:17:38.839] (arg_0 : Prelude.bitvector 0x20)
--> Prelude.Vec 0x8 Prelude.Bool
-[15:17:38.839] let { x@1 = Prelude.bitvector 0x1
+[16:52:46.357] let { x@1 = Prelude.bitvector 0x1
       x@2 = Prelude.bitvector 0x20
       x@3 = Prelude.bvNat 0x20 0x0
       x@4 = Prelude.bvNat 0x20 0x1
@@ -185,11 +460,11 @@ saw ffs.saw
                                                    (Prelude.bvAdd 0x20 x@4
                                                       x@7))))))))))))
                   (Prelude.bvAnd 0x20 x@4 (Prelude.bvAdd 0x20 x@4 x@14))))
-[15:17:38.842] -------------------------
-[15:17:38.843] Extracting implementation term: musl
-[15:17:38.851] (arg_0 : Prelude.bitvector 0x20)
+[16:52:46.360] -------------------------
+[16:52:46.360] Extracting implementation term: musl
+[16:52:46.369] (arg_0 : Prelude.bitvector 0x20)
 -> Prelude.Vec 0x8 Prelude.Bool
-[15:17:38.852] let { x@1 = Prelude.bitvector 0x20
+[16:52:46.370] let { x@1 = Prelude.bitvector 0x20
       x@2 = Prelude.bitvector 0x8
       x@3 = Prelude.bvNat 0x20 0x0
     }
