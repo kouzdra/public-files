@@ -19,7 +19,7 @@ int fact(int n) {
   return fact (n-1);
 }
 
-int fact6 (int m) {
+int fact6 () {
   return fact (6);
 }
 
