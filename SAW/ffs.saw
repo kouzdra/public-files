@@ -1,0 +1,30 @@
+set_base 16;
+
+l <- llvm_load_module "ffs.bc";
+
+print "Extracting reference term: ref";
+ref <- crucible_llvm_extract l "ref";
+print_type ref;
+print_term ref;
+
+print "-------------------------";
+
+print "Extracting implementation term: imp";
+imp <- crucible_llvm_extract l "imp";
+print_type imp;
+print_term imp;
+
+
+print "-------------------------";
+
+print "Extracting implementation term: imp_nobranch";
+imp_nobranch <- crucible_llvm_extract l "imp_nobranch";
+print_type imp_nobranch;
+print_term imp_nobranch;
+
+print "-------------------------";
+
+print "Extracting implementation term: musl";
+imp <- crucible_llvm_extract l "musl";
+print_type imp;
+print_term imp;
